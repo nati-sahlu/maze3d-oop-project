@@ -16,13 +16,18 @@ public class GameMap {
 		return mapGrid[row][col] == 1; // 1 means wall
 	}
 	
-	public int getTile(int x, int y) {
+	/*public int getTile(int x, int y) {
 		if (x >= 0 && y >= 0 && y < height && x < width) {
 			return mapGrid[y][x];
 		}
 		return 1; // treat as wall
-	}
-	
+	}*/
+	public boolean isFinishAt(float x, float y) {
+		int col = (int)(x / TILE_SIZE);
+		int row = (int)(y / TILE_SIZE);
+		if (row < 0 || row >= height || col < 0 || col >= width) return false;
+		return mapGrid[row][col] == 2;
+	}	
 	public int getCellAt(float x, float y) {
 		int col = (int)(x / TILE_SIZE);
 		int row = (int)(y / TILE_SIZE);

@@ -11,9 +11,9 @@ public class Player {
 		this.rotationAngle = angle;
 	}
 
-	public void rotateLeft() { rotationAngle -= 0.05f;}
+	public void rotateLeft() { rotationAngle -= rotationSpeed;}
 
-	public void rotateRight() { rotationAngle += 0.05f; }
+	public void rotateRight() { rotationAngle += rotationSpeed; }
 	
 	public void moveForward(GameMap map) {
 		float moveStep = moveSpeed;
